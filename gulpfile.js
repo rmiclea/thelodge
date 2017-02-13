@@ -5,6 +5,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
 var plumber = require('gulp-plumber');
+var sourcemaps = require('gulp-sourcemaps');
 
 function swallowError (error) {
 
@@ -16,7 +17,9 @@ function swallowError (error) {
 
 gulp.task('sass', function () {
   return gulp.src('wp-content/themes/elixir-jellythemes/scss/main.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.write())
     .pipe(minifyCss({keepSpecialComments: 1}))
     .pipe(autoprefixer())
     .pipe(rename('style.css'))
