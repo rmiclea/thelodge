@@ -2,6 +2,7 @@
   "name": "thelodge",
   "version": "1.0.0",
   "description": "",
+  "repository": "https://github.com/rmiclea/thelodge.git",
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.1",
